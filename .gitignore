@@ -52,3 +52,7 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+/.vs/DemoConsoleApp/v17
+/DemoConsoleApp/.vs/DemoConsoleApp/FileContentIndex
+/.vs/DemoConsoleApp/copilot-chat/9f6bce30/sessions
+/DemoConsoleApp/.vs/DemoConsoleApp/DesignTimeBuild
