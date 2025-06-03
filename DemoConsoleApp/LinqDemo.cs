@@ -8,7 +8,7 @@ namespace DemoConsoleApp
 {
     public class LinqDemo
     {
-        public void LinqExample()
+        public static int LinqExample()
         {
             List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
@@ -24,6 +24,7 @@ namespace DemoConsoleApp
             // Using LINQ to find the sum of all numbers
             var sum = numbers.Sum();
             Console.WriteLine($"Sum of all numbers: {sum}");
+            return 1;
         }
     }
 }

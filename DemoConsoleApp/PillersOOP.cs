@@ -15,6 +15,15 @@ namespace DemoConsoleApp
     }
     public class Person
     {
+        public Person()
+        {
+            
+        }
+        public Person(string firstName, string lastName)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+        }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public virtual void SayName()
@@ -26,6 +35,10 @@ namespace DemoConsoleApp
 
     public class Student : Person
     {
+        public Student(string firstName, string lastName) : base(firstName, lastName)
+        {
+                
+        }
         public override void SayName()
         {
             Console.WriteLine("My name is??");
@@ -35,6 +48,7 @@ namespace DemoConsoleApp
     {
         public virtual void Speak()
         {
+            Person person = new Person();
             Console.WriteLine("Animal speaks");
         }
     }
