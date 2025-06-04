@@ -1,0 +1,30 @@
+﻿<Window x:Class="TodoAppWpf.Views.ViewTodosWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TodoAppWpf.Views"
+        mc:Ignorable="d"
+        Title="ViewTodosWindow" Height="450" Width="800">
+    <StackPanel>
+        <!--<ListBox ItemsSource="{Binding Tasks}"/>-->
+
+        <TextBox Text="{Binding FilterText, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,5" />
+        <Button Content="Filter" Command="{Binding FilterCommand}" />
+
+        <ListBox ItemsSource="{Binding Items}" Margin="0,10,0,0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="0,2">
+                        <CheckBox IsChecked="{Binding IsCompleted}" 
+                           Command="{Binding DataContext.ToggleCompleteCommand, RelativeSource={RelativeSource AncestorType=ListBox}}"
+                           CommandParameter="{Binding}" />
+                        <TextBlock Text="{Binding Title}" Margin="5,0,0,0" />
+                        <TextBlock Text=" - " />
+                        <TextBlock Text="{Binding DueDate, StringFormat='{}{0:MMM dd, yyyy HH:mm}'}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </StackPanel>
+</Window>
